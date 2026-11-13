@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Panel · Secretito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <main>
+    <h1 style="margin-top:28px">Panel</h1>
+    <div class="cifras" id="cifras"></div>
+
+    <div class="pestanas">
+      <button class="activa" data-seccion="pagos">Pagos</button>
+      <button data-seccion="subir">Subir</button>
+      <button data-seccion="contenido">Contenido</button>
+      <button data-seccion="ajustes">Precios</button>
+    </div>
+
+    <section id="pagos">
+      <label style="max-width:240px">
+        <select id="filtro-pagos">
+          <option value="revision">Por revisar</option>
+          <option value="pagado">Pagados</option>
+          <option value="todos">Todos</option>
+        </select>
+      </label>
+      <div class="lista" id="lista-pagos"></div>
+    </section>
+
+    <section id="subir" hidden>
+      <form class="tarjeta" id="form-subir" style="max-width:560px">
+        <label><span>Foto o video</span><input type="file" name="archivo" accept="image/*,video/*" required></label>
+        <div class="previa-subida" id="previa-subida" hidden>
+          <img id="previa-img" alt="">
+          <span>Así se verá difuminada para quien no tenga acceso.</span>
+        </div>
+        <label><span>Título</span><input name="titulo" maxlength="80" required></label>
+        <label><span>Descripción (opcional)</span><textarea name="descripcion" rows="2" maxlength="400"></textarea></label>
+        <label>
+          <span>¿Quién la puede ver?</span>
+          <select name="acceso">
+            <option value="suscriptores">Solo suscriptores</option>
+            <option value="compra">Compra individual (precio aparte)</option>
+            <option value="gratis">Gratis (todos)</option>
+          </select>
+        </label>
+        <label id="campo-precio" hidden><span>Precio en pesos</span><input type="number" name="precio" min="500" step="10" value="4990"></label>
+        <p class="error-form" id="error-subir"></p>
+        <button class="boton boton-ancho" id="boton-subir">Publicar</button>
+      </form>
+    </section>
+
+    <section id="contenido" hidden>
+      <div class="lista" id="lista-contenido"></div>
+    </section>
+
+    <section id="ajustes" hidden>
+      <form class="tarjeta" id="form-ajustes" style="max-width:420px">
+        <label><span>Precio de la suscripción (pesos)</span><input type="number" name="precio_suscripcion" min="500" step="10" required></label>
+        <label><span>Duración (días)</span><input type="number" name="dias_suscripcion" min="1" max="365" required></label>
+        <p class="suave chico">El nombre, la bio, las fotos de perfil y los datos de transferencia se cambian en <code>js/config.js</code>.</p>
+        <button class="boton boton-ancho">Guardar</button>
+      </form>
+    </section>
+  </main>
+  <script type="module" src="js/admin.js"></script>
+</body>
+</html>

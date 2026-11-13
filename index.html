@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Secretito</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <main>
+    <section>
+      <div class="portada" id="portada"></div>
+      <div class="perfil-info">
+        <div class="avatar" id="avatar"></div>
+        <div class="perfil-datos">
+          <h1 id="nombre"></h1>
+          <div class="usuario" id="usuario"></div>
+        </div>
+      </div>
+      <p class="bio" id="bio"></p>
+      <div class="estadisticas" id="estadisticas"></div>
+      <div class="redes" id="redes"></div>
+      <div class="caja-suscripcion" id="caja-suscripcion"></div>
+    </section>
+
+    <div class="pestanas" role="tablist">
+      <button class="activa" data-filtro="todo">Todo</button>
+      <button data-filtro="foto">Fotos</button>
+      <button data-filtro="video">Videos</button>
+    </div>
+    <section class="grilla" id="grilla"></section>
+  </main>
+
+  <div class="capa" id="visor" hidden>
+    <button class="visor-cerrar" id="cerrar-visor" aria-label="Cerrar">×</button>
+    <div class="visor-contenido">
+      <div id="visor-medio"></div>
+      <div class="visor-texto">
+        <h3 id="visor-titulo"></h3>
+        <p class="suave" id="visor-descripcion"></p>
+      </div>
+    </div>
+  </div>
+
+  <script type="module" src="js/inicio.js"></script>
+</body>
+</html>
