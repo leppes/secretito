@@ -1,7 +1,7 @@
 // Todo lo que cambias de tu sitio está aquí.
 export const CONFIG = {
-  nombre: "Secretito",
-  usuario: "@secretito",
+  nombre: "Secretito Jean Luca Chupalo",
+  usuario: "@jeanlucachupalo",
   bio: "Mi rincón privado 💗 Contenido exclusivo que no subo a ningún otro lado. Suscríbete para verlo todo.",
 
   // Imágenes de tu perfil (pon los archivos en la carpeta img/). Vacío = degradado.
